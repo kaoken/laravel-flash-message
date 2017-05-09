@@ -1,6 +1,6 @@
 # laravel-flash-message
-[![TeamCity (simple build status)](https://img.shields.io/magnumci/ci/96ffb83fa700f069024921b0702e76ff/new-meta.svg)](https://github.com/kaoken/laravel-flash-message)
-[![composer version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/kaoken/laravel-flash-message)
+[![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/laravel-flash-message)
+[![composer version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/kaoken/laravel-flash-message)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/laravel-flash-message)
 [![php version](https://img.shields.io/badge/php%20version-≧5.6.4-red.svg)](https://github.com/kaoken/laravel-flash-message)
 [![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.4-red.svg)](https://github.com/kaoken/laravel-flash-message)
@@ -25,7 +25,7 @@ composer install kaoken/laravel-flash-message
 
 ## 初期設定
 
-**`config\app.php` に以下のように追加：**
+#### **`config\app.php` に以下のように追加：**
 ``` config\app.php
     'providers' => [
         ...
@@ -36,6 +36,30 @@ composer install kaoken/laravel-flash-message
         ...
         'FlashMessage' => Kaoken\FlashMessage\Facades\FlashMessage::class,
     ],
+```
+
+### ミドルウェア
+下記のミドルウェアで、`FlashMessage`をインスタンス化した`$flashMessage`という変数で、全て、または一部のBladeテンプレートで使用できるようにする為のもので、  
+`view('test',['flashMessage' => FlashMessage::getInstance()])`という感じに、個々で使用したい場合は、追加しないこと。  
+
+#### **`app\Http\Kernel.php` に以下のように追加：**
+
+``` app\Http\Kernel.php
+//-----------------------------------------------------
+ * protected $middleware = [
+ *    ...
+ *    Kaoken\FlashMessage\FlashMessageMiddleware:class
+//-----------------------------------------------------
+// または
+protected $middlewareGroups = [
+   'web' => [
+       ...
+       Kaoken\FlashMessage\FlashMessageMiddleware:class
+//-----------------------------------------------------
+// または
+protected $routeMiddleware = [
+   ...
+   'flash.message' => Kaoken\FlashMessage\FlashMessageMiddleware:class
 ```
 
 ## メソッド一覧
@@ -84,7 +108,7 @@ class Test extends Controller
     }
     public function getTest02()
     {
-        return view('test', ['flashMessage'=>FlashMessage::getInstance()]);
+        return view('test');
     }
 }
 

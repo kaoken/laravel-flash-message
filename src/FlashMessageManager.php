@@ -1,5 +1,5 @@
 <?php
-namespace App\Library\FlashMessage;
+namespace Kaoken\FlashMessage\FlashMessage;
 
 class FlashMessageManager implements IFlashMessageManager
 {

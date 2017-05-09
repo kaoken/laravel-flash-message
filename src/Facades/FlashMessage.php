@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Library\FlashMessage\Facades;
+namespace Kaoken\FlashMessage\FlashMessage\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

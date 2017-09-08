@@ -1,6 +1,6 @@
 # laravel-flash-message
 [![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/laravel-flash-message)
-[![composer version](https://img.shields.io/badge/version-1.5.1-blue.svg)](https://github.com/kaoken/laravel-flash-message)
+[![composer version](https://img.shields.io/badge/version-1.5.2-blue.svg)](https://github.com/kaoken/laravel-flash-message)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/laravel-flash-message)
 [![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.5-red.svg)](https://github.com/kaoken/laravel-flash-message)
 
@@ -47,18 +47,18 @@ composer install kaoken/laravel-flash-message
 //-----------------------------------------------------
 protected $middleware = [
    ...
-   \Kaoken\FlashMessage\FlashMessageMiddleware::class
+   \Kaoken\FlashMessage\Middleware\FlashMessageMiddleware::class,
 //-----------------------------------------------------
 // または
 protected $middlewareGroups = [
    'web' => [
        ...
-       \Kaoken\FlashMessage\FlashMessageMiddleware::class
+       \Kaoken\FlashMessage\Middleware\FlashMessageMiddleware::class,
 //-----------------------------------------------------
 // または
 protected $routeMiddleware = [
    ...
-   'flash.message' => \Kaoken\FlashMessage\FlashMessageMiddleware::class
+   'flash.message' => \Kaoken\FlashMessage\Middleware\FlashMessageMiddleware::class,
 ```
 
 ## メソッド一覧

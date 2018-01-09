@@ -1,6 +1,6 @@
 # laravel-flash-message
 [![Build Status](https://img.shields.io/travis/markdown-it/markdown-it/master.svg?style=flat)](https://github.com/kaoken/laravel-flash-message)
-[![composer version](https://img.shields.io/badge/version-1.5.3-blue.svg)](https://github.com/kaoken/laravel-flash-message)
+[![composer version](https://img.shields.io/badge/version-1.5.4-blue.svg)](https://github.com/kaoken/laravel-flash-message)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/laravel-flash-message)
 [![laravel version](https://img.shields.io/badge/Laravel%20version-≧5.5-red.svg)](https://github.com/kaoken/laravel-flash-message)
 
